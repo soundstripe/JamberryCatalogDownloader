@@ -8,7 +8,7 @@ block_cipher = None
 
 
 a = Analysis(['downloader.py'],
-             pathex=['C:\\Users\\steve\\OneDrive\\Z_Nosync\\dev\\DownloadJamberryImages'],
+             pathex=[],
              binaries=[],
              datas=[
                  (extracticc_path, 'argyll/bin'),
