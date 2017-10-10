@@ -103,8 +103,10 @@ def main():
     destination_dir = config['downloader']['catalog_folder']
     removed_dir = config['downloader']['removed_files_folder']
     new_only = config['downloader'].getboolean('new_only')
+    username = config['credentials']['username']
+    password = config['credentials']['password']
     configure_logging(config)
-    ws = jamberry.JamberryWorkstation()
+    ws = jamberry.JamberryWorkstation(username=username, password=password)
     all_products = ws.catalog_products()
     download_items(all_products, destination_dir, removed_dir, new_only=new_only)
     correct_colors(destination_dir)
