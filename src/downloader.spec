@@ -1,14 +1,12 @@
 # -*- mode: python -*-
 
-extracticc_path = './argyll/bin/extracticc.exe'
-cctiff_path = './argyll/bin/cctiff.exe'
-sRGB_path = './argyll/ref/sRGB.icm'
-
 block_cipher = None
+extracticc_path = './src/argyll/bin/extracticc.exe'
+cctiff_path = './src/argyll/bin/cctiff.exe'
+sRGB_path = './src/argyll/ref/sRGB.icm'
 
-
-a = Analysis(['downloader.py'],
-             pathex=[],
+a = Analysis(['src\\downloader.py'],
+             pathex=['C:\\Users\\steve\\Downloads\\JamberryCatalogDownloader', 'C:\\Users\\steve\\Downloads\\JamberryCatalogDownloader'],
              binaries=[],
              datas=[
                  (extracticc_path, 'argyll/bin'),
@@ -16,7 +14,7 @@ a = Analysis(['downloader.py'],
                  (sRGB_path, 'argyll/ref'),
              ],
              hiddenimports=[],
-             hookspath=[],
+             hookspath=['c:\\users\\steve\\py_jamberry_api\\lib\\site-packages\\pyupdater\\hooks'],
              runtime_hooks=[],
              excludes=[],
              win_no_prefer_redirects=False,
@@ -27,7 +25,7 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='downloader',
+          name='win',
           debug=False,
           strip=False,
           upx=True,
@@ -38,5 +36,5 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='Jamberry Image Downloader',
+               name='win',
                icon='downloader.ico')
