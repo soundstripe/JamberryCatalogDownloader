@@ -1,6 +1,6 @@
 import subprocess, sys
 
-version = '0.2.7'
+version = '0.2.8'
 adv_installer_path = r"C:\Program Files (x86)\Caphyon\Advanced Installer 14.3\bin\x86\AdvancedInstaller.com"
 
 
