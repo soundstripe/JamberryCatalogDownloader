@@ -1,12 +1,13 @@
 # -*- mode: python -*-
 
 block_cipher = None
-extracticc_path = './src/argyll/bin/extracticc.exe'
-cctiff_path = './src/argyll/bin/cctiff.exe'
-sRGB_path = './src/argyll/ref/sRGB.icm'
+extracticc_path = './argyll/bin/extracticc.exe'
+cctiff_path = './argyll/bin/cctiff.exe'
+sRGB_path = './argyll/ref/sRGB.icm'
 
-a = Analysis(['src\\downloader.py'],
-             pathex=['C:\\Users\\steve\\Downloads\\JamberryCatalogDownloader', 'C:\\Users\\steve\\Downloads\\JamberryCatalogDownloader'],
+a = Analysis(['downloader.py'],
+             pathex=['C:\\Users\\steve\\Downloads\\JamberryCatalogDownloader',
+                     'C:\\Users\\steve\\Downloads\\JamberryCatalogDownloader'],
              binaries=[],
              datas=[
                  (extracticc_path, 'argyll/bin'),

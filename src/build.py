@@ -1,14 +1,16 @@
 import subprocess, sys
 
-version = '0.2.6'
+version = '0.2.7'
 adv_installer_path = r"C:\Program Files (x86)\Caphyon\Advanced Installer 14.3\bin\x86\AdvancedInstaller.com"
 
 
 def main():
     result = subprocess.run([
-        'pyinstaller',
+        'pyupdater',
         'build',
-        'downloader.spec',
+        '--app-version',
+        version,
+        'src\downloader.spec',
     ])
     if result.returncode != 0:
         print('build failed')
